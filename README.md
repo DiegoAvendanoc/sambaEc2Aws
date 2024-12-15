@@ -20,8 +20,71 @@ Paso a paso de como desplegar SAMBA para compartir archivos
 <img src="https://i.ibb.co/sVN5MQ4/image.png">
 <img src="https://i.ibb.co/dP0vVRx/image.png">
 
-- **Tercer Paso** Editar las reglas de entrada
-  
+**Tercer Paso** Editar las reglas de entrada
+
 <img src="https://i.ibb.co/pfm7g2V/image.png">
 <img src="https://i.ibb.co/HrTS5QV/image.png">
 <img src="https://i.ibb.co/X8cG56d/image.png">
+
+# 👩‍💻 Instalacion y configuracion de SAMBA
+- comando para actualizar y instala paquetes.
+```
+ sudo apt update
+```
+```
+sudo apt  upgrade
+```
+- instalacion de samba
+```
+sudo apt install samba samba-client samba-common
+```
+- creamos la carpeta y verificamos los permisos
+```
+mkdir compartido
+```
+```
+ls -l
+```
+- damos permisos a la carpeta
+```
+chmod 777 compartido/
+```
+- realizamos una copia de seguridad del archivo *smb.conf*
+```
+cd /etc/
+```
+```
+cd samba/
+```
+```
+sudo cp smb.conf smb.conf.backup
+```
+- editamos y configuramos el archivo *smb.conf*
+```
+sudo nano /etc/samba/smb.conf
+```
+```
+[Compartido]
+  path =  /home/admin/compartido/
+  browsable = yes
+  writable = yes
+  guest ok = yes
+  read only = no
+  forcer user = nobody
+```
+- reiniciar samba
+```
+sudo systemctl restart nmbd
+```
+```
+sudo systemctl status nmbd
+```
+
+- comprobar el acceso
+```
+\\<ip-elastica>
+```
+- para ver la ip
+```
+curl http://icanhazip.com
+```
