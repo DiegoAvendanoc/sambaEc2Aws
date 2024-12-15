@@ -26,6 +26,14 @@ Paso a paso de como desplegar SAMBA para compartir archivos
 <img src="https://i.ibb.co/HrTS5QV/image.png">
 <img src="https://i.ibb.co/X8cG56d/image.png">
 
+```
+# Read more about SSH config files: https://linux.die.net/man/5/ssh_config
+Host practicasmb
+    HostName 34.202.27.85
+    User admin
+    IdentityFile c:\Users\dieoa\OneDrive\Documentos\diego\practicasmb.pem
+```
+
 # 👩‍💻 Instalacion y configuracion de SAMBA
 - comando para actualizar y instala paquetes.
 ```
