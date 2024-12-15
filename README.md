@@ -29,7 +29,7 @@ Paso a paso de como desplegar SAMBA para compartir archivos
 # 👩‍💻 Instalacion y configuracion de SAMBA
 - comando para actualizar y instala paquetes.
 ```
- sudo apt update
+sudo apt update
 ```
 ```
 sudo apt  upgrade
