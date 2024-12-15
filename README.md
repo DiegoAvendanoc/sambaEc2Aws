@@ -32,7 +32,7 @@ Paso a paso de como desplegar SAMBA para compartir archivos
 sudo apt update
 ```
 ```
-sudo apt  upgrade
+sudo apt upgrade
 ```
 - instalacion de samba
 ```
