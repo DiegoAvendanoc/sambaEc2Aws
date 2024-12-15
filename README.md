@@ -96,3 +96,26 @@ sudo systemctl status nmbd
 ```
 curl http://icanhazip.com
 ```
+
+## Con Autenticador
+- crear usuario en el sistema
+```
+sudo adduser nombre_usuario
+```
+- Agregar el usuario a Samba 
+```
+sudo smbpasswd -a nombre_usuario
+```
+- Habilitar el usuario en Samba
+```
+sudo smbpasswd -e nombre_usuario
+```
+- modificar el archivo *smb.conf*
+```
+[Compartido]
+  path =  /home/admin/compartido/
+  browsable = yes
+  writable = yes
+  valid users = diegopro
+  read only = no
+```
